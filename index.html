@@ -4576,6 +4576,7 @@
          for (let j = 0; j < pp.length; ++j) {
             let current = pp[j];
             if (j >= 5) continue;
+            if (current.indexOf('っ') > 0) continue;
             pronunciation.push(current);
          }
          let meanings = [];
