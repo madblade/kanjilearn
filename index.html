@@ -10,8 +10,8 @@
 		</style>
     </head>
 	<body>
-		<div class="col-sm-6">
-			<div class="col-sm-3">
+		<div class="col-sm-12">
+			<div class="col-sm-2">
 				<div class="form-group">
 					<label id="formControlRangeLabel" for="formControlRange">
 						N1
@@ -26,33 +26,40 @@
 					<input type="range" value="1" min="1" max="10" class="form-control-range" id="formControlSubRange">
 				</div>
 			</div>
+         
 			<!-- <img class="col-sm-6 pull-right" id="whatisaid" src="./jap/a.png"></img> -->
-			<div class="col-sm-5 pull-right" id="whatisaid-char"></div>
-		</div>
-		<div class="col-sm-4">
-			<input id="whathesaid" class="col-sm-4 form-control" type="text" placeholder="What are you reading?">			
-			<div class="col-sm-12">
-				<div class="progress">
-					<div 
-						id="kanji-pv"
-						class="progress-bar" role="progressbar" style="width:10%;" 
-						aria-valuenow="0" aria-valuemin="0" aria-valuemax="10">
-						0 / 0
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-12">
-				<p class="col-sm-3" id="eta"></p>
-				<p class="col-sm-3 pull-right" id="streak">streak: </p>
-				<p class="col-sm-3 pull-right" id="combo">combo: </p>
-			</div>
-			<div class="col-sm-12">
-				<p id="status" class="col-sm-12">Hello there. You are a bold one.</p>
-			</div>
-		</div>
-		<div class="col-sm-2">
-			<button type="button" class="btn btn-info" id="oscour">oscour</button>
-			<div id="scour"></div>
+         <div class="col-sm-10">
+            <div class="row">
+               <div class="col-sm-6 text-center" id="whatisaid-char"></div>
+            </div>
+            <div class="row">
+               <div class="col-sm-6">
+                  <input id="whathesaid" class="col-sm-4 form-control" type="text" placeholder="What are you reading?">			
+                  <div class="col-sm-12">
+                     <div class="progress">
+                        <div 
+                           id="kanji-pv"
+                           class="progress-bar" role="progressbar" style="width:10%;" 
+                           aria-valuenow="0" aria-valuemin="0" aria-valuemax="10">
+                           0 / 0
+                        </div>
+                     </div>
+                  </div>
+                  <div class="col-sm-12">
+                     <p class="col-sm-3" id="eta"></p>
+                     <p class="col-sm-3 pull-right" id="streak">streak: </p>
+                     <p class="col-sm-3 pull-right" id="combo">combo: </p>
+                  </div>
+                  <div class="col-sm-12">
+                     <p id="status" class="col-sm-12">Hello there. You are a bold one.</p>
+                  </div>
+               </div>
+               <div class="col-sm-2">
+                  <button type="button" class="btn btn-info" id="oscour">oscour</button>
+                  <div id="scour"></div>
+               </div>
+            </div>
+         </div>
 		</div>
 	</body>
 	<script>
