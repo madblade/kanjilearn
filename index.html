@@ -1,6 +1,7 @@
 <html lang="en">
 	<head>
       <meta charset="UTF-8">
+      <meta name=viewport content="width=device-width, initial-scale=1">
       <title>Kanjilearn</title>
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
       <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -32,20 +33,20 @@
 				</div>
             <br/>
 			</div>
-         
+
          <hr>
-         
+
 			<!-- <img class="col-sm-6 pull-right" id="whatisaid" src="./jap/a.png"></img> -->
          <div class="row col-12">
             <div class="col-6 col-md-12 text-center" id="whatisaid-char"></div>
-            
+
             <div class="col-6 col-md-12">
                <div class="col-12">
                   <input id="whathesaid" class="col-12 form-control" type="text" placeholder="What are you reading?">
                   <div class="progress">
-                     <div 
+                     <div
                         id="kanji-pv"
-                        class="progress-bar" role="progressbar" style="width:10%;" 
+                        class="progress-bar" role="progressbar" style="width:10%;"
                         aria-valuenow="0" aria-valuemin="0" aria-valuemax="10">
                         0 / 0
                      </div>
@@ -68,7 +69,7 @@
 		</div>
 	</body>
 	<script>
-	
+
 	var level = 0;
 	var kanjis = [];
 	var level1 = [
@@ -153,7 +154,7 @@
 		['雨', ['rain'], ['u', 'ame', 'ama-', '-same'] , []],
 		['分', ['part', 'minute', 'share', 'understand', 'know', 'rate'], ['bun', 'fun', 'bu', 'wa-'], []]
 	];
-   
+
    var k1 = [
    ["日",["nichi","jitsu","hi"],["day","sun","counter for days"]],
    ["一",["ichi","itsu","hitotsu"],["one","one radical (no.1)"]],
@@ -234,7 +235,7 @@
    ["休",["kyuu","yasumu","yasumaru","yasumeru"],["rest","day off","retire","sleep"]],
    ["父",["fu","chichi"],["father"]],
    ["雨",["u","ame"],["rain"]]];
-   
+
    var ks1 = [
    [["日録","nichiroku","journal; daily record"],["日銀券","nichiginken","Japanese banknote"],["日一日と","hiichinichito","day by day"],["隔日","kakujitsu","every other day"],["時日","jijitsu","date; time"],["日月","jitsugetsu","sun and moon; time; days; years"],["日銭","hizeni","daily income in cash; money paid by daily installments"],["日和見","hiyorimi","waiting and seeing (how the wind blows); sitting on the fence; straddle"],["日傘","higasa","sunshade; parasol"]],
    [["一枚看板","ichimaikanban","(a) leading player; one's sole Sunday best; the best item one has (to show)"],["一脈","ichimyaku","(a) vein; (a) thread (of connection)"],["一目散に","ichimokusanni","at full speed"],["不統一","futooitsu","disunity; disharmony"],["一に","itsuni","solely; entirely; only; or"],["択一","takuitsu","choosing an alternative"],["一つ一つ","hitotsuhitotsu","one-by-one; separately; in detail"],["今一つ","imahitotsu","one more; not quite"],["一つ","hitotsu","one; for one thing; only; (not) even; just (e.g. \"just try it\")"]],
@@ -315,7 +316,7 @@
    [["不眠不休","fuminfukyuu","without sleep or rest; day and night"],["小休止","shookyuushi","a break or breather"],["休診","kyuushin","no medical examinations (today)"],["休む","yasumu","to be absent; to rest; to go to bed; to stop doing some ongoing activity for a time"],["下手な考え休むに似たり","hetanakangaeyasumuninitari","take a rest rather than useless thinking"],["休まる","yasumaru","to be rested; to feel at ease; to repose; to be relieved"],["体が休まる","karadagayasumaru","to be (feel) rested"],["休める","yasumeru","to rest; to suspend; to give relief"],["気を休める","kiwoyasumeru","to ease up; to relax attention"]],
    [["父祖","fuso","ancestors"],["家父","kafu","one's father"],["亡父","boofu","my deceased father; my late father"],["父方","chichikata","father's side of family"],["父の日","chichinohi","Father's Day"],["父親","chichioya","father"]],
    [["春雨","shun'u","gentle spring rain; thin noodles made from bean starch (or potato starch)"],["雨天順延","utenjun'en","rescheduled in case of rain"],["多雨","tau","heavy rain"],["雨降り","amefuri","rainfall; rainy weather"],["長雨","nagāme","long spell of rain"],["俄雨","niwakāme","rain shower"]]];
-   
+
    var k2 = [["会",["kai","e","au","awaseru"],["meeting","meet","party","association","interview","join"]],
    ["同",["doo","onaji"],["same","agree","equal"]],
    ["事",["ji","zu","koto","tsukaeru"],["matter","thing","fact","business","reason","possibly"]],
@@ -482,7 +483,7 @@
    ["妹",["mai","imooto"],["younger sister"]],
    ["姉",["shi","ane"],["elder sister"]],
    ["漢",["kan"],["Sino-","China"]]];
-   
+
    var ks2 = [[["医会","ikai","medical society"],["歌会","utakai","poetry party or competition; gathering of tanka poets"],["公害等調整委員会","koogaitoochōseiiinkai","Environmental Dispute Coordination Commission"],["法会","hooe","Buddhist service (e.g. memorial service)"],["会得","etoku","understanding; comprehension; grasp; perception; appreciation; mastery (of an art or skill)"],["会","e","gathering (esp. Buddhist, festive, etc.)"],["立ち会う","tachiau","to be present; to be witness to"],["会う","au","to meet; to have an accident"],["巡り会う","meguriau","to meet fortuitously (e.g. running into an old friend); to meet by chance; to happen across"],["会わせる","awaseru","to make (someone) to meet; to expose to"]],
    [["共同組合","kyoodookumiai","cooperative; partnership"],["期成同盟","kiseidoomei","association formed to carry out an objective"],["同義","doogi","the same meaning"],["同じ","onaji","same; (usu. part of a 'nara' conditional) anyway"],["同じく","onajiku","similarly; same (idea); same (name)"],["これと同じ","koretoonaji","the same as this"]],
    [["雑事","zatsuji","miscellaneous matters"],["検事局","kenjikyoku","prosecutor's office"],["後生大事","goshoodaiji","with religious zeal; with utmost devotion; take great care of"],["好事家","koozuka","dilettante; person of fantastic taste"],["事がある","kotogāru","(something) has occurred; (something) happens on occasions"],["細かい事","komakaikoto","trifles; minor details"],["いっその事","issonokoto","rather; sooner; preferably"],["事える","tsukaeru","to serve; to work for; to attend"]],
@@ -649,7 +650,7 @@
    [["義妹","gimai","sister-in-law (younger); stepsister"],["弟妹","teimai","younger brother and sister"],["実妹","jitsumai","one's younger sister"],["妹","imooto","younger sister"],["妹さん","imootosan","younger sister"],["妹分","imootobun","protegee; someone who one considers as a younger sister"]],
    [["実姉","jisshi","one's elder sister"],["義姉","gishi","sister-in-law (elder); stepsister (elder)"],["姉妹","shimai","sisters"],["姉","ane","older sister; elder sister"],["姉貴","aneki","elder sister"],["姉上","aneue","older sister"]],
    [["漢人","kanjin","Chinese person (esp. Han Chinese)"],["漢籍","kanseki","Chinese books; Chinese classics"],["門外漢","mongaikan","outsider; layman; amateur"]]];
-   
+
    var k3 = [["政",["sei","shoo","matsurigoto","man"],["politics","government"]],
    ["民",["min","tami"],["people","nation","subjects"]],
    ["議",["gi"],["deliberation","consultation","debate","consideration"]],
@@ -1017,7 +1018,7 @@
    ["偉",["i","erai"],["admirable","greatness","remarkable","conceited","famous","excellent"]],
    ["猫",["byoo","neko"],["cat"]],
    ["幾",["ki","ikutsu","ikura"],["how many","how much","how far","how long","some","several"]]];
-   
+
    var ks3 = [[["無政府主義","museifushugi","(doctrine of) anarchism"],["町政","choosei","town organization; town organisation; town administration"],["悪政","akusei","misgovernment"],["摂政","sesshoo","regent; regency"],["政","matsurigoto","rule; government"],["政を執る","matsurigotowotoru","to administer the affairs of state"],["政所","mandokoro","official in charge of the administration of domains and general affairs of powerful noble families (from the middle of the Heian period); titled lady (legal wife of an important official); government office related to finances (Kamakura and Muromachi periods); clerk working for large temples and shrines"],["北の政所","kitanomandokoro","legal wife of a regent, of the imperial adviser, or of an official at the Grand Council of State"]],
    [["国民審査","kokuminshinsa","national review (as an act of a peoples' sovereignty)"],["民具","mingu","everyday articles which have come to be regarded as folk art"],["小市民","shooshimin","petty bourgeois; lower middle class"],["民","tami","nation; people"],["流浪の民","ruroonotami","wandering people; nomadic tribe"]],
    [["七不思議","nanafushigi","seven wonders (of a particular area)"],["国防会議","kokubookaigi","(Japanese) National Defense Council (1956-86) (Defence); National Security Council (USA)"],["院議","ingi","legislative decision"]],
@@ -1385,7 +1386,7 @@
    [["偉容","iyoo","dignity; majestic appearance"],["偉","i","greatness"],["偉人","ijin","great man"],["偉い","erai","great; awful"],["偉いですね","eraidesune","good"],["ど偉い","doerai","immense; awesome; enormous; terrific"]],
    [["愛猫","aibyoo","pet cat"],["愛猫家","aibyooka","cat lover"],["猫額大","byoogakudai","tiny"],["山猫","yamaneko","wildcat (Felis silvestris)"],["飼い猫","kaineko","pet cat"],["黒猫","kuroneko","black cat"]],
    [["幾何","kika","geometry"],["幾何学","kikagaku","geometry"],["越幾斯","ekisu","extract (esp. of food, fruit, etc.); essence"],["幾つ","ikutsu","how many"],["幾つも","ikutsumo","many; great number of"],["幾つでも","ikutsudemo","any number of; ever so many"],["幾ら","ikura","how much"],["幾らか","ikuraka","some; somewhat"],["幾らでも","ikurademo","as many (much) as one likes"]]];
-   
+
    var k4 = [["党",["too"],["party","faction","clique"]],
    ["協",["kyoo"],["co-","cooperation"]],
    ["区",["ku"],["ward","district"]],
@@ -1753,7 +1754,7 @@
    ["滴",["teki","shizuku","shitataru"],["drip","drop"]],
    ["曇",["don","kumoru"],["cloudy weather","cloud up"]],
    ["伺",["shi","ukagau"],["pay respects","visit","ask","inquire","question","implore"]]];
-   
+
    var ks4 = [[["残党","zantoo","remnants (of a defeated political party); refugees"],["不偏不党","fuhenfutoo","impartiality; neutrality; independence"],["立党","rittoo","founding a political party"]],
    [["紳士協定","shinshikyootei","gentlemen's agreement"],["労働協約","roodookyōyaku","labor agreement; labour agreement"],["海外経済協力基金","kaigaikeizaikyooryokukikin","Overseas Economic Cooperation Fund"]],
    [["教区","kyooku","parish"],["区検","kuken","local prosecutor"],["解放区","kaihooku","liberated area or zone"]],
@@ -2121,7 +2122,7 @@
    [["水滴","suiteki","drop of water; vessel for replenishing inkstone water"],["点滴","tenteki","raindrops; intravenous drip"],["一滴","itteki","drop (of fluid)"],["一滴","hitoshizuku","drop (of fluid)"],["滴","shizuku","drop (of water); drip"],["滴る","shitataru","to drip; to overflow with freshness"],["水も滴る","mizumoshitataru","splendidly handsome"]],
    [["晴曇","seidon","fine weather and cloudy"],["曇天","donten","dull (cloudy) weather"],["優曇華","udonge","udumbara (mythical Indian plant often identified with the cluster fig, Ficus glomerata); something very rare (from the legend that it flowers once in 3000 years); Japanese fiber banana flower; green lacewing eggs"],["曇る","kumoru","to get cloudy; to cloud up; to be gloomy; to look slightly downward (of a noh mask; indicating sadness, grief, etc.)"],["掻き曇る","kakikumoru","to become overcast"]],
    [["伺候","shikoo","waiting upon (someone)"],["伺う","ukagau","to ask; to implore (a god for an oracle); to visit; to speak to (a large crowd at a theatre, etc.)"],["ご意見を伺う","goikenwookagau","to ask the opinion of (a superior)"],["機会を伺う","kikaiwookagau","to wait for one's chance; to wait for an opportunity"]]];
-   
+
    var k5 = [["氏",["shi","uji"],["family name","surname","clan"]],
    ["統",["too","suberu"],["overall","relationship","ruling","governing"]],
    ["保",["ho","tamotsu"],["protect","guarantee","keep","preserve","sustain","support"]],
@@ -3354,7 +3355,7 @@
    ["崚",[],["towering in a row"]],
    ["濫",["ran","midarini","midarigamashii"],["excessive","overflow","spread out"]],
    ["捷",["shoo","hayai"],["victory","fast"]]];
-   
+
    var ks5 = [[["彼氏","kareshi","boyfriend"],["氏族","shizoku","clan; family"],["摂氏","sesshi","Centigrade; Celsius"],["氏神","ujigami","patron god; tutelar deity; guardian deity; local deity"],["氏子","ujiko","shrine parishioner"],["氏","uji","family name; lineage; birth"]],
    [["血統書","kettoosho","a pedigree"],["統帥","toosui","supreme command; high command"],["系統的","keitooteki","systematic"],["統べる","suberu","to control; to supervise"]],
    [["機密保護","kimitsuhogo","security (e.g. data, password, etc.)"],["連帯保証","rentaihoshoo","joint liability on guarantee"],["自賠責保険","jibaisekihoken","mandatory vehicle liability insurance"],["保つ","tamotsu","to keep; to preserve; to hold; to retain; to maintain; to support; to sustain; to last; to endure; to keep well (food); to wear well; to be durable"],["命を保つ","inochiwotamotsu","to preserve life"]],
@@ -4578,22 +4579,22 @@
    [["鞠躬如","kikukyuujo","deferential; humble; reverent; respectful"],["鞠問","kikumon","examination; interrogation; questioning"],["推鞠","suikiku","investigating (e.g. a criminal)"],["鞠","mari","ball"],["手鞠","temari","traditional Japanese handball game"],["蹴鞠","kemari","kemari; type of football played by courtiers in ancient Japan"]],
    [["濫造","ranzoo","overproduction; careless manufacture; churning out (substandard goods)"],["氾濫","hanran","overflowing; flood"],["濫伐","ranbatsu","reckless deforestation; overcutting of forests"],["濫りに","midarini","without authority; without reason; recklessly"],["濫りがましい","midarigamashii","morally corrupt"]],
    [["必捷","hisshoo","certain victory"],["捷利","shoori","victory; triumph; conquest; success; win"],["奇捷","kishoo","beauty spot; unexpected victory"],["捷い","hayai","fast; early (in the day, etc.); (too) soon; easy"]]];
-   
+
    function filter3(kkk, decile) {
-      let result = [];
-      for (let i = Math.floor(decile * kkk.length / 10); i < Math.min(Math.ceil((decile + 1) * kkk.length / 10), kkk.length); ++i) {
-         let k = kkk[i];
-         let pronunciation = [];
-         let pp = k[1];
-         for (let j = 0; j < pp.length; ++j) {
-            let current = pp[j];
+      var result = [];
+      for (var i = Math.floor(decile * kkk.length / 10); i < Math.min(Math.ceil((decile + 1) * kkk.length / 10), kkk.length); ++i) {
+         var k = kkk[i];
+         var pronunciation = [];
+         var pp = k[1];
+         for (var j = 0; j < pp.length; ++j) {
+            var current = pp[j];
             if (j >= 5) continue;
             if (current.indexOf('っ') > 0) continue;
             pronunciation.push(current);
          }
-         let meanings = [];
-         for (let j = 0; j < k[2].length; ++j) {
-            let current = k[2][j];
+         var meanings = [];
+         for (var j = 0; j < k[2].length; ++j) {
+            var current = k[2][j];
             if (current.indexOf('sign of the') > 0) continue;
             if (current.indexOf('no.') > 0) continue;
             meanings.push(k[2][j]);
@@ -4602,118 +4603,124 @@
       }
       return result;
    }
-   
-	for (let i = 0; i < 10; ++i) kanjis.push(filter3(k1, i));
-	for (let i = 0; i < 10; ++i) kanjis.push(filter3(k2, i));
-	for (let i = 0; i < 10; ++i) kanjis.push(filter3(k3, i));
-	for (let i = 0; i < 10; ++i) kanjis.push(filter3(k4, i));
-	for (let i = 0; i < 10; ++i) kanjis.push(filter3(k5, i));
-   
+
+	for (var i = 0; i < 10; ++i) kanjis.push(filter3(k1, i));
+	for (var i = 0; i < 10; ++i) kanjis.push(filter3(k2, i));
+	for (var i = 0; i < 10; ++i) kanjis.push(filter3(k3, i));
+	for (var i = 0; i < 10; ++i) kanjis.push(filter3(k4, i));
+	for (var i = 0; i < 10; ++i) kanjis.push(filter3(k5, i));
+
    function filter2(kss) {
-      let kss1 = [];
-      for (let i = 0; i < kss.length; ++i) kss1.push([kss[i][0], [kss[i][1]], kss[i][2].split('; '), []])
-      return kss1;   
+      var kss1 = [];
+      for (var i = 0; i < kss.length; ++i) kss1.push([kss[i][0], [kss[i][1]], kss[i][2].split('; '), []]);
+      return kss1;
    }
    function filter (kks, decile) {
-      let result = [];
-      for (let i = Math.floor(decile * kks.length / 10); i < Math.min(Math.ceil((decile + 1) * kks.length / 10), kks.length); ++i) {
+      var result = [];
+      for (var i = Math.floor(decile * kks.length / 10); i < Math.min(Math.ceil((decile + 1) * kks.length / 10), kks.length); ++i) {
          result = result.concat(filter2(kks[i]));
       }
       return result;
    }
-   for (let i = 0; i < 10; ++i) kanjis.push(filter(ks1, i));
-	for (let i = 0; i < 10; ++i) kanjis.push(filter(ks2, i));
-	for (let i = 0; i < 10; ++i) kanjis.push(filter(ks3, i));
-	for (let i = 0; i < 10; ++i) kanjis.push(filter(ks4, i));
-	for (let i = 0; i < 10; ++i) kanjis.push(filter(ks5, i));
-	
-	let N = kanjis[level].length;
-	var scores = Array(N).fill(0);
-	let rotation = [...Array(N).keys()];
+   for (var i = 0; i < 10; ++i) kanjis.push(filter(ks1, i));
+	for (var i = 0; i < 10; ++i) kanjis.push(filter(ks2, i));
+	for (var i = 0; i < 10; ++i) kanjis.push(filter(ks3, i));
+	for (var i = 0; i < 10; ++i) kanjis.push(filter(ks4, i));
+	for (var i = 0; i < 10; ++i) kanjis.push(filter(ks5, i));
+
+	var N = kanjis[level].length;
+	var scores = // Array(N).fill(0);
+        Array.apply(null, new Array(N)).map(Number.prototype.valueOf, 0);
+	var rotation = // [...Array(N).keys()];
+        Array.apply(null, { length: N }).map(Number.call, Number);
+
 	shuffle(rotation);
-	
-	let index = 0;
+
+	var index = 0;
 	$('#whatisaid-char')
 		.attr('style', 'font-size:60px')
 		.text(kanjis[level][rotation[index]][0]);
-		
-	let maxEta = 30;
-	let eta = maxEta;
-	let streak = 0;
-	let needNext = false;
-	let comboMax = 0;
+
+	var maxEta = 30;
+	var eta = maxEta;
+	var streak = 0;
+	var needNext = false;
+	var comboMax = 0;
 	setInterval(function() {
 		update();
 	}, 1000);
-	
+
 	$('#oscour').click(function() {
-		let k = kanjis[level][rotation[index]];
-		let k1 = k[1].join(', ');
-		let k2 = k[2].join(', ');
-		let k3 = k[3].join(', ');
+		var k = kanjis[level][rotation[index]];
+		var k1 = k[1].join(', ');
+		var k2 = k[2].join(', ');
+		var k3 = k[3].join(', ');
 		$('#scour').text(k1 + ' ; ' + k2 + ' ; ' + k3).attr('style', 'color:red;');
 	});
-	
-	let currentAnswer = [];
-	let whathesaid = '';
+
+	var currentAnswer = [];
+	var whathesaid = '';
 	$('#whathesaid').keyup(function()
 	{
 		whathesaid = $(this).val();
-		
-		let k = kanjis[level][rotation[index]];
-		let life = getKanjiTotalLife(k);
+
+		var k = kanjis[level][rotation[index]];
+		var life = getKanjiTotalLife(k);
 		if (currentAnswer.indexOf(whathesaid) < 0)
-		{		
-			let c = checkKanji(whathesaid);
+		{
+			var c = checkKanji(whathesaid);
 			if (c.length > 0) {
 				currentAnswer.push(k[c[0]][c[1]]);
-				
-				let hit = currentAnswer.length; // getKanjiHit(currentAnswer, k);
-				
-				let p = Math.round(100 * hit / life);
-				
+
+				var hit = currentAnswer.length; // getKanjiHit(currentAnswer, k);
+
+				var p = Math.round(100 * hit / life);
+
 				// Update progress.
 				$("#kanji-pv")
 					.text(hit + ' / ' + life)
 					.attr('aria-valuenow', hit)
 					.attr('aria-valuemax', life)
 					.attr('style', 'width:' + p + '%');
-			
+
 				$('#whathesaid').val('');
 				$('#status').text(currentAnswer.join(', ')).attr('style', 'color:green;');
-				
+
 				if (hit >= life) {
 					if (streak > 0) streak++;
 					else streak = 1;
 					scores[rotation[index]]++;
 					comboMax = Math.max(streak, comboMax);
-					
+
 					// Check for remaining life.
 					$('#status').text('Bravi.').attr('style', 'color:green');
 					eta = maxEta;
 					next();
 				}
 			}
-			
+
 		}
 	});
-	
+
 	// Change level.
 	$('#formControlRange').change(function(v)
 	{
-      let t = $(this);
-      let surLevel = parseInt(t.val());
+      var t = $(this);
+      var surLevel = parseInt(t.val());
       $('#formControlRangeLabel').text('N' + surLevel);
-      let subLevel = parseInt($('#formControlSubRange').val());
+      var subLevel = parseInt($('#formControlSubRange').val());
 		newLevel = (surLevel - 1) * 10 + subLevel; // $(this).val();
 		level = newLevel - 1;
-		if (!kanjis[level]) { 
+		if (!kanjis[level]) {
 			console.log('Unsupported level: ' + newLevel + '.');
-			level = 0; 
+			level = 0;
 		}
 		N = kanjis[level].length;
-		scores = Array(N).fill(0);
-		rotation = [...Array(N).keys()];
+		scores = // Array(N).fill(0);
+            Array.apply(null, new Array(N)).map(Number.prototype.valueOf, 0);
+
+		rotation = // [...Array(N).keys()];
+            Array.apply(null, { length: N }).map(Number.call, Number);
 		shuffle(rotation);
 		eta = maxEta;
 		currentAnswer = [];
@@ -4724,22 +4731,26 @@
 			.attr('style', 'font-size:60px')
 			.text(kanjis[level][rotation[index]][0]);
 	});
-   
+
    $('#formControlSubRange').change(function()
    {
-      let t = $(this);
-      let subLevel = parseInt(t.val());
+      var t = $(this);
+      var subLevel = parseInt(t.val());
       $('#formControlSubRangeLabel').text('D' + subLevel);
-      let surLevel = parseInt($('#formControlRange').val());
+      var surLevel = parseInt($('#formControlRange').val());
 		newLevel = (surLevel - 1) * 10 + subLevel; // $(this).val();
 		level = newLevel - 1;
-		if (!kanjis[level]) { 
+		if (!kanjis[level]) {
 			console.log('Unsupported level: ' + newLevel + '.');
-			level = 0; 
+			level = 0;
 		}
 		N = kanjis[level].length;
-		scores = Array(N).fill(0);
-		rotation = [...Array(N).keys()];
+		scores = // Array(N).fill(0);
+            Array.apply(null, new Array(N)).map(Number.prototype.valueOf, 0);
+
+		rotation = // [...Array(N).keys()]; // ES6 syntax
+            Array.apply(null, { length: N }).map(Number.call, Number);
+
 		shuffle(rotation);
 		eta = maxEta;
 		currentAnswer = [];
@@ -4750,24 +4761,24 @@
 			.attr('style', 'font-size:60px')
 			.text(kanjis[level][rotation[index]][0]);
    });
-	
+
 	function shuffle(a) {
 		// Shuffle.
-		let j, x, i;
+		var j, x, i;
 		for (i = a.length - 1; i > 0; i--) {
 			j = Math.floor(Math.random() * (i + 1));
 			x = a[i];
 			a[i] = a[j];
 			a[j] = x;
 		}
-		
+
 		// Put most difficult symbols first.
-		let na = 0;
-		for (let m = 0; m < a.length; ++m) { // Naive quadratic reordering.
+		var na = 0;
+		for (var m = 0; m < a.length; ++m) { // Naive quadratic reordering.
 			// find argmin of remaining tab.
-			let argmin = m;
-			for (let n = m + 1; n < a.length; ++n) {
-				if (scores[a[n]] < scores[a[m]]) argmin = n; 
+			var argmin = m;
+			for (var n = m + 1; n < a.length; ++n) {
+				if (scores[a[n]] < scores[a[m]]) argmin = n;
 			}
 			// put it at current place.
 			if (argmin !== m) {
@@ -4776,84 +4787,84 @@
 				a[argmin] = x;
 			}
 		}
-		
+
 		return a;
 	}
-	
+
 	function getKanjiTotalLife()
 	{
-		let k = kanjis[level][rotation[index]];
-		let m = k[1].length;
-		let s1 = k[2].length;
-		let s2 = k[3].length;
+		var k = kanjis[level][rotation[index]];
+		var m = k[1].length;
+		var s1 = k[2].length;
+		var s2 = k[3].length;
 		return m + s1 + s2;
 	}
-	
-	function getKanjiHit(currentAnswer, k) 
+
+	function getKanjiHit(currentAnswer, k)
 	{
-		let s = 0;
-		
+		var s = 0;
+
 		// Check meanings
-		let meanings = k[1];
-		for (let i = 0; i < meanings.length; ++i) {
+		var meanings = k[1];
+		for (var i = 0; i < meanings.length; ++i) {
 			if (currentAnswer.indexOf(meanings[i]) > 0) {
 				s++;
 			}
 		}
-		
+
 		// Check Onyomi
-		let sounds = k[2];
-		for (let i = 0; i < sounds.length; ++i) {
+		var sounds = k[2];
+		for (var i = 0; i < sounds.length; ++i) {
 			if (currentAnswer.indexOf(sounds[i])) {
 				s++;
 			}
 		}
-		
-		// Check Kunyomi 
-		let sounds2 = k[3];
-		for (let i = 0; i < sounds2.length; ++i) {
+
+		// Check Kunyomi
+		var sounds2 = k[3];
+		for (var i = 0; i < sounds2.length; ++i) {
 			if (currentAnswer.indexOf(sounds2[i]) > 0) {
 				s++;
 			}
 		}
-		
+
 		return s;
 	}
-	
+
 	function checkKanji(heSaid)
 	{
-		let k = kanjis[level][rotation[index]];
-		
+		var k = kanjis[level][rotation[index]];
+
 		// Check meanings
-		let meanings = k[1];
-		for (let i = 0; i < meanings.length; ++i) {
+		var meanings = k[1];
+		for (var i = 0; i < meanings.length; ++i) {
 			if (heSaid == meanings[i]) {
 				return [1, i];
 			}
 		}
-		
+
 		// Check Onyomi
-		let sounds = k[2];
-		for (let i = 0; i < sounds.length; ++i) {
+		var sounds = k[2];
+		for (var i = 0; i < sounds.length; ++i) {
 			if (heSaid == sounds[i]) {
 				return [2, i];
 			}
 		}
-		
-		// Check Kunyomi 
-		let sounds2 = k[3];
-		for (let i = 0; i < sounds2.length; ++i) {
+
+		// Check Kunyomi
+		var sounds2 = k[3];
+		for (var i = 0; i < sounds2.length; ++i) {
 			if (heSaid == sounds2[i]) {
 				return [3, i];
 			}
 		}
-		
+
 		return [];
 	}
-	
+
 	function update() {
 		eta--;
-		
+
 		if (needNext) {
 			needNext = false;
 			eta = maxEta;
@@ -4861,55 +4872,55 @@
 		}
 		else if (eta <= 0)
 		{ // Lost
-			let k = kanjis[level][rotation[index]];
-			let text = k[1].join(',') + ' ; ' + k[2].join(',') + ' ; ' + k[3].join(',');
-			
+			var k = kanjis[level][rotation[index]];
+			var text = k[1].join(',') + ' ; ' + k[2].join(',') + ' ; ' + k[3].join(',');
+
 			$('#status')
 				.text(text)
 				.attr('style','color:orange');
-			
+
 			if (eta < -2) {
 				eta = maxEta;
 				next();
 			}
 		}
-		
+
 		$('#eta').text(eta > 0 ? eta : 0);
 	}
-	
+
 	function next()
 	{
 		$('#combo').text('combo: ' + comboMax);
 		$('#streak').text('streak: ' + streak);
 		$('#whathesaid').val('');
 		$('#status').text('');
-		
+
 		index++;
 		if (index >= Math.min(10, kanjis[level].length)) { // kanjis[level].length = N
 			index = 0;
 			shuffle(rotation);
 		}
-		
+
 		currentAnswer = [];
-		let k = kanjis[level][rotation[index]];
-		let life = getKanjiTotalLife(k);
-		
+		var k = kanjis[level][rotation[index]];
+		var life = getKanjiTotalLife(k);
+
 		// Update progress.
 		$("#kanji-pv")
 			.text('0 / ' + life)
 			.attr('aria-valuenow', 0)
 			.attr('aria-valuemax', life)
          .attr('style', 'width: 10%');
-		
+
 		$('#whatisaid')
 			.attr('style', 'display:none');
-			
+
 		$('#whatisaid-char')
 			.attr('style', 'font-size:60px')
 			// .text(katakanaPool ? katakanas[rotation[index]] : hiraganas[rotation[index]]);
 			.text(kanjis[level][rotation[index]][0]);
 		// }
 	}
-	
+
 	</script>
 </html>
