@@ -36,6 +36,21 @@
 
          <hr>
 
+          <div class="row col-12">
+              <h4 >Difficulty selection</h4>
+          </div>
+          <div class="row col-12">
+              <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="hardmode">
+                  <label class="form-check-label" for="hardmode">
+                      Hard mode
+                  </label>
+              </div>
+              <br/>
+          </div>
+
+          <hr>
+
 			<!-- <img class="col-sm-6 pull-right" id="whatisaid" src="./jap/a.png"></img> -->
          <div class="row col-12">
             <div class="col-6 col-md-12 text-center" id="whatisaid-char"></div>
@@ -69,6 +84,8 @@
 		</div>
 	</body>
 	<script>
+
+    var easymode = true;
 
 	var level = 0;
 	var kanjis = [];
@@ -4797,7 +4814,18 @@
 		var m = k[1].length;
 		var s1 = k[2].length;
 		var s2 = k[3].length;
-		return m + s1 + s2;
+		var totalLife = m + s1 + s2;
+
+		// Compute easymode life.
+		var easyLife = Math.min(m + s2, 2);
+		if (s1 < 2) easyLife = 3;
+		else if (s1 === 2) {
+		    // Actually for basic kanji, meanings are on k[2]
+		    if (k[2][0].indexOf('counter for') < 0) easyLife++;
+		    if (k[2][1].indexOf('counter for') < 0) easyLife++;
+        } else easyLife = 4;
+
+	    return easymode ? Math.min(totalLife, easyLife) : totalLife;
 	}
 
 	function getKanjiHit(currentAnswer, k)
@@ -4894,6 +4922,8 @@
 		$('#streak').text('streak: ' + streak);
 		$('#whathesaid').val('');
 		$('#status').text('');
+        var hardMode = $('#hardmode').is(':checked');
+        easymode = !hardMode;
 
 		index++;
 		if (index >= Math.min(10, kanjis[level].length)) { // kanjis[level].length = N
